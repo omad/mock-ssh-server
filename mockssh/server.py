@@ -59,7 +59,7 @@ class Handler(paramiko.ServerInterface):
                                  stdin=subprocess.PIPE,
                                  stdout=subprocess.PIPE,
                                  stderr=subprocess.PIPE)
-            stdout, stderr = p.communicate()
+            stdout, stderr = p.communicate(channel.recv(-1)
             channel.sendall(stdout)
             channel.sendall_stderr(stderr)
             channel.send_exit_status(p.returncode)

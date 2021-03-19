@@ -9,16 +9,16 @@ not need OpenSSH binaries to be installed.
 Sample usage
 ------------
 
-As a `py.test`_ fixture::
+As a `pytest`_ fixture::
 
     import os
 
-    from pytest import yield_fixture
+    import pytest
 
     import mockssh
 
 
-    @yield_fixture()
+    @pytest.fixture
     def server():
         users = {
             "sample-user": "/path/to/user-private-key",
@@ -46,6 +46,6 @@ As a `py.test`_ fixture::
 
 
 .. _paramiko: http://www.paramiko.org/
-.. _py.test:  http://pytest.org/latest/
+.. _pytest:  http://pytest.org/latest/
 .. image:: https://travis-ci.org/carletes/mock-ssh-server.svg
 	   :target: https://travis-ci.org/carletes/mock-ssh-server
