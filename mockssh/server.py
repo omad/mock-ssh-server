@@ -6,16 +6,9 @@ import subprocess
 import threading
 import time
 import fcntl
-try:
-    from queue import Queue
-except ImportError:  # Python 2.7
-    from Queue import Queue
-
-try:
-    import selectors
-except ImportError:  # Python 2.7
-    import selectors2 as selectors
-
+from queue import Queue
+import selectors
+import select
 
 import paramiko
 
